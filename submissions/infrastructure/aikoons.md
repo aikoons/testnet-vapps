@@ -1,4 +1,4 @@
-# vApp Submission: [Your Project Name]
+# vApp Submission: SL Ping
 
 ## Verification
 ```yaml
@@ -11,35 +11,65 @@ timestamp: "2025-01-15"
 - **Name**: Mahdy Saifan
 - **GitHub**: @aikoons
 - **Discord**: ohaikoo#0
-- **Experience**: Brief background
+- **Experience**: experience in Linux servers, simple APIs (Node.js/Python), and basic blockchain RPC integrations.
 
 ## Project
 
 ### Name & Category
-- **Project**: Your vApp Name
-- **Category**: identity/defi/social/gaming/infrastructure/other
+- **Project**: SL ping
+- **Category**: infrastructure / monitoring
 
 ### Description
-What problem does your vApp solve? What does it do?
+SL Ping is a lightweight health checker for Soundness Layer RPC endpoints.
+Problem it solves:
+
+Node operators and developers often don’t know if an endpoint is healthy or lagging.
+
+SL Ping provides a simple status page showing:
+
+RPC availability (✅ online / ❌ offline)
+
+Block height returned by the node
+
+Response time in milliseconds
+
+This gives operators quick visibility without needing a full monitoring suite.
 
 ### SL Integration  
-How will you use Soundness Layer? What specific SL features?
+SL Integration
+
+Query SL RPC methods (eth_blockNumber, net_version, etc.) to check liveness.
+
+Compare block height with a reference RPC to detect sync lag.
+
+Optionally store recent ping results on WALRUS for historical status snapshots.
 
 ## Technical
 
 ### Architecture
-High-level system design and approach
+Backend script pings configured SL RPC endpoints every few seconds.
+
+Results are stored in memory (or WALRUS for persistence).
+
+Frontend dashboard fetches and displays status, block height, and latency.
 
 ### Stack
-- **Frontend**: React/Vue/etc
-- **Backend**: Rust/Node.js/Python/etc  
-- **Blockchain**: SL + others
-- **Storage**: Database/WALRUS/IPFS/etc
+Frontend: React + Tailwind (minimal dashboard)
+
+Backend: Node.js (Express) or Python (FastAPI)
+
+Blockchain: Soundness Layer (via RPC)
+
+Storage: WALRUS (for optional history)
 
 ### Features
-1. Core feature 1
-2. Core feature 2  
-3. Core feature 3
+Check endpoint availability (online/offline).
+
+Show current block height & detect sync lag.
+
+Display latency (ping time).
+
+Simple UI with ✅/❌ indicators.
 
 ## Timeline
 
@@ -54,10 +84,15 @@ High-level system design and approach
 - [ ] User testing
 
 ## Innovation
-What makes this unique? Why will people use it?
+Extremely lightweight and easy to deploy (one small script + simple UI).
+
+Tailored for Soundness Layer, unlike generic “ping” tools.
+
+Helps developers and node operators quickly verify RPC health.
 
 ## Contact
-Preferred contact method and where you'll share updates.
+discord : ohaikoo#0 
+twitter : aikoons1
 
 
 **Checklist before submitting:**
